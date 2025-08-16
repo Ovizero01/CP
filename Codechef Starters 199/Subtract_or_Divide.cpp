@@ -1,3 +1,4 @@
+//https://www.codechef.com/problems/SUBDIV
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
