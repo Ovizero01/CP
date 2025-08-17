@@ -1,5 +1,7 @@
+//https://codeforces.com/contest/2127/problem/B
 #include <bits/stdc++.h>
 using namespace std;
+#define ll long long
 
 void solve(){
     int n, x; cin >> n >> x;
