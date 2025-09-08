@@ -19,26 +19,21 @@ void solve() {
         }
     }
 
-    map <int, vector<int>> freq;
+    map<int, queue<int>> freq;
     int val = 1;
     for(auto it : mp){
-        freq[it.first].push_back(0);
+        freq[it.first].push(0);
         for(int i = 1; i <= it.second / it.first; i++){
-            freq[it.first].push_back(val);
+            freq[it.first].push(val);
             val++;
         }
     }
 
-    // for(auto it : freq){
-    //     cout << it.first << "->";
-    //     for(int x : it.second) cout << x << " ";
-    // }
-
     map <int, int> final;
     for(int i = 0; i < n; i++){
         final[b[i]]++;
-        if(b[i] == 1) freq[b[i]].erase(freq[b[i]].begin());
-        else if(final[b[i]] % b[i] == 1) freq[b[i]].erase(freq[b[i]].begin());
+        if(b[i] == 1) freq[b[i]].pop();
+        else if(final[b[i]] % b[i] == 1) freq[b[i]].pop();
         cout << freq[b[i]].front() << " ";
     }
     cout << '\n';
