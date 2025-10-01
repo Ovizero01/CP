@@ -1,22 +1,20 @@
-//https://codeforces.com/contest/2149/problem/A
+//https://www.codechef.com/problems/BUYING7
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
 
 void solve(){
-    int n; cin >> n;
-    int neg = 0, zero = 0;
+    int n, k; cin >> n >> k;
     vector <int> a(n);
     for(int &i : a) cin >> i;
+    sort(a.rbegin(), a.rend());
 
-    for(int i = 0; i < n; i++){
-        if(a[i] == 0) zero++;
-        else if(a[i] < 0) neg++;
+    int sum = 0;
+    for(int i = 0; i < k; i++){
+        sum += a[i];
     }
-
-    if(neg % 2 == 1) cout << zero + 2 << '\n';
-    else cout << zero << '\n';
-}   
+    cout << sum << endl;
+}
 
 int main(){
     ios::sync_with_stdio(false);
