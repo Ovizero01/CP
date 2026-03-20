@@ -1,4 +1,4 @@
-//
+//https://www.codechef.com/problems/MINDIS6
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
